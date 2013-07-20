@@ -14,11 +14,13 @@ public class Impact {
 
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event){
+	
 		
 	}
 	
 	@Init
 	public void init(FMLInitializationEvent event){
+		System.out.print("testing impact console config");
 		
 	}
 	@PostInit
