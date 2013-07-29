@@ -1,0 +1,4 @@
+Dont need a defualt biome number
+
+
+set each chunk as 0 and when it suppares a given interval such as 100, then change the biomes in the chunk

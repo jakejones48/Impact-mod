@@ -2,7 +2,7 @@ package impact.lib;
 
 public class DefaultBiomeNumber {
 	
-	
+	//Not Needed more than likely
 	public static final int PLAINS = 4000;
 	public static final int DESERT = 6000;
 	public static final int EXTREME_HILLS = 5000;
