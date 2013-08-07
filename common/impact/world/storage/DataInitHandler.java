@@ -14,7 +14,7 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.storage.SaveHandler;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.world.ChunkEvent;
-import net.minecraftforge.event.world.WorldEvent.Load;
+import net.minecraftforge.event.world.ChunkEvent.Load;
 
 public class DataInitHandler {
 	
@@ -25,19 +25,26 @@ public class DataInitHandler {
 	
 	@ForgeSubscribe
 	public void onChunkCreate(Load event){
-		Chunk loaded;
-		loaded = boo.getChunk();
-		
+				
+		// state variables for chunk position
 		int chunkX;
 		int chunkZ;
-		impactDataDir = new File(ModLoader.getMinecraftInstance().mcDataDir, "\\ImpactData.txt");
+		
+		//creates Impact mod directory
+		impactDataDir = new File(ModLoader.getMinecraftInstance().mcDataDir + "\\saves\\" + ModLoader.getMinecraftServerInstance().getWorldName(), "\\ImpactData");
 		impactDataDir.mkdirs();
 		//impactDataDir.createNewFile();
-		chunkX= loaded.xPosition;
-		chunkZ= loaded.zPosition;
-		System.out.println("" + chunkX);
-		System.out.println("" + chunkZ);
-		ModLoader.getMinecraftInstance().thePlayer.addChatMessage("Test mode:" + chunkX);
+		
+		//sets values of chunk positions for storage
+		chunkX= event.getChunk().xPosition;
+		chunkZ= event.getChunk().zPosition;
+		
+		//test if working
+		
+		//System.out.println("" + chunkX);
+		//System.out.println("" +chunkZ);*/
+		
+		
 		
 		    }
 		}
