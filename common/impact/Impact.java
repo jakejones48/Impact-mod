@@ -17,6 +17,8 @@ import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class Impact {
@@ -31,21 +33,14 @@ public class Impact {
 	@Init
 	public void init(FMLInitializationEvent event){
 		MinecraftForge.EVENT_BUS.register(new DataInitHandler());
-		System.out.print("testing impact console config");
+		GameRegistry.registerPlayerTracker(new ImpactPlayerTracker());
+		
 		
 	}
 	@PostInit
 	public void postInit(FMLPostInitializationEvent event){
-		File impactDataDir;
-		impactDataDir = new File(ModLoader.getMinecraftInstance().mcDataDir, "\\ImpactData.txt");
-		impactDataDir.mkdirs();
-		try {
-			impactDataDir.createNewFile();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
+		System.out.println("Impact loaded :)");
 		
 	}
 	
