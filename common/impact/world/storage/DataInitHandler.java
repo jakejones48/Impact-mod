@@ -26,9 +26,7 @@ import net.minecraftforge.event.world.ChunkEvent.Load;
 public class DataInitHandler {
 	
 	private File impactDataDir;
-	SaveHandler rodger;
-	Minecraft hello;
-	ChunkEvent boo;
+	
 	
 	@ForgeSubscribe
 	public void onChunkCreate(Load event){
@@ -52,6 +50,8 @@ public class DataInitHandler {
 		if(!tmp.exists()){
 			tmp.mkdir();
 		}
+		
+		//creates storage file in "x" folder with "z" name
 		File tmp2 = new File(tmp, Integer.toString(chunkZ)+".txt");
 		if(!tmp2.isFile()){
 			try {
