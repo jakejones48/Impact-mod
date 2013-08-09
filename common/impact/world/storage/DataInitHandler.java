@@ -12,6 +12,7 @@ import java.io.IOException;
 import cpw.mods.fml.common.IPlayerTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.src.ModLoader;
+import net.minecraft.world.WorldProvider;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.storage.SaveHandler;
@@ -35,9 +36,10 @@ public class DataInitHandler {
 		// state variables for chunk position
 		int chunkX;
 		int chunkZ;
+		String dimension = new String(event.world.provider.getDimensionName());
 		
 		//creates Impact mod directory
-		impactDataDir = new File(ModLoader.getMinecraftInstance().mcDataDir + "\\saves\\" + ModLoader.getMinecraftServerInstance().getWorldName(), "\\ImpactData");
+		impactDataDir = new File(ModLoader.getMinecraftInstance().mcDataDir + "\\saves\\" + ModLoader.getMinecraftServerInstance().getWorldName(), "\\ImpactData\\"+ dimension);
 		impactDataDir.mkdirs();
 		
 		
