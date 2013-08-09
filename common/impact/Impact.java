@@ -8,7 +8,7 @@ import net.minecraft.src.ModLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.ChunkEvent;
 import impact.lib.Reference;
-import impact.world.storage.ChunkNumberStore;
+
 import impact.world.storage.DataInitHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -23,7 +23,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class Impact {
 
-	private ChunkNumberStore bob;
+	
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event){
 	
