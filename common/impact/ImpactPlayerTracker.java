@@ -9,11 +9,9 @@ public class ImpactPlayerTracker implements IPlayerTracker{
 
 	@Override
 	public void onPlayerLogin(EntityPlayer player) {
-		// TODO Auto-generated method stub
-		System.out.println("Join Here?");
-		//this doesnt appear to work at the moment FIX needed
-		//ModLoader.getMinecraftInstance().thePlayer.addChatMessage("Test mode:");
-		//player.sendChatToPlayer("Impact version: " + Reference.VERSION + " loaded not advised to use");
+		
+		// displays chat message of Impact version
+		player.addChatMessage("Impact version: " + Reference.VERSION + " loaded not advised to use at this time");
 		
 	}
 
