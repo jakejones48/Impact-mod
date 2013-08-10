@@ -6,3 +6,8 @@ make the change number configuratble so that you can change the speed of its cha
 
 remember 
 event.getChunk().setBiomeArray(bytearray)
+
+Try to get a biome list on startup
+arragne these based on tempreture into a list
+with ids to change between them
+To insure mod compatibility 

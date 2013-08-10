@@ -57,6 +57,7 @@ public class BiomeChanger {
 		
 	}
 	
+	// this is hear mainly in case I need to get the array later without doing changes
 	public byte[] getCurrentBiomeArray(int x, int z, World world){
 		byte[] biomeArray;
 		//gets biome array from world object
