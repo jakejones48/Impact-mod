@@ -25,11 +25,12 @@ import net.minecraftforge.event.world.ChunkEvent.Load;
 
 public class DataInitHandler {
 	
-	private File impactDataDir;
+	public static File impactDataDir;
 	
 	
 	@ForgeSubscribe
 	public void onChunkCreate(Load event){
+		
 				
 		// state variables for chunk position
 		int chunkX;
