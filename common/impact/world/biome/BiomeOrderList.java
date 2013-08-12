@@ -12,7 +12,16 @@ public class BiomeOrderList {
 		
 		boolean sort = true;
 		int length = biomeList.length;
+		//bug sorting
+		//length = 10;
 		
+		for (int i = 0; i < biomeList.length; i++){
+			if(biomeList[i] == null){
+				length = i;
+				break;
+			}
+			
+		}
 		int[] unsortedID = new int[length];
 		int[] sortedID = new int[length];
 		String[] unsortedName = new String[length];
@@ -26,7 +35,7 @@ public class BiomeOrderList {
 			unsortedTemp[i] = biomeList[i].temperature;
 		}
 		
-		for (int j=0; j<1; j++){
+		
 			while(sort){
 		
 				sort = false;
@@ -54,6 +63,10 @@ public class BiomeOrderList {
 			sortedID = unsortedID;
 			sortedName = unsortedName;
 			
+			
+		for (int i = 0; i<length; i++){
+			
+			System.out.println("ID: " + sortedID[i] + " Name: " + sortedName[i] + " Temp: " + sortedTemp[i]);
 			
 		}
 		
