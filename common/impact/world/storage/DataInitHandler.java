@@ -71,6 +71,10 @@ public class DataInitHandler {
 		
 		    }
 	
+	public File getImpactDataDir(){
+		return this.impactDataDir;
+	}
+	
 	@ForgeSubscribe
 	public void treeOutput(SaplingGrowTreeEvent event){
 		int x = event.x;
