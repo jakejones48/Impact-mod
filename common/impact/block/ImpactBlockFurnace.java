@@ -3,6 +3,7 @@ package impact.block;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import impact.world.biome.TimeChecker;
 
 import java.util.Random;
 
@@ -25,6 +26,10 @@ import net.minecraft.world.World;
 
 public class ImpactBlockFurnace extends BlockContainer
 {
+	
+	private static float startTime;
+	private static float endTime;
+	private static float activeTime;
     /**
      * Is the random generator used by furnace to drop the inventory contents in random directions.
      */
@@ -43,7 +48,7 @@ public class ImpactBlockFurnace extends BlockContainer
     @SideOnly(Side.CLIENT)
     private Icon furnaceIconFront;
 
-    protected ImpactBlockFurnace(int par1, boolean par2)
+    public ImpactBlockFurnace(int par1, boolean par2)
     {
         super(par1, Material.rock);
         this.isActive = par2;
@@ -159,11 +164,20 @@ public class ImpactBlockFurnace extends BlockContainer
 
         if (par0)
         {
+        	startTime = System.currentTimeMillis();
             par1World.setBlock(par2, par3, par4, Block.furnaceBurning.blockID);
         }
         else
         {
+        	endTime = System.currentTimeMillis();
             par1World.setBlock(par2, par3, par4, Block.furnaceIdle.blockID);
+            if(startTime == 0){
+            	activeTime = endTime - TimeChecker.worldStartTime;
+            }else{
+            	activeTime = endTime - startTime;
+            }
+            System.out.println("Fire At Will " + activeTime);
+            
         }
 
         keepFurnaceInventory = false;
