@@ -166,6 +166,7 @@ public class ImpactBlockFurnace extends BlockContainer
         {
         	startTime = System.currentTimeMillis();
             par1World.setBlock(par2, par3, par4, Block.furnaceBurning.blockID);
+            System.out.println("hit to burning");
         }
         else
         {
