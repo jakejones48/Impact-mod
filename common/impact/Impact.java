@@ -44,8 +44,12 @@ public class Impact {
 		final StepSound soundStoneFootstep = new StepSound("stone", 1.0F, 1.0F);
 		int i = Block.furnaceIdle.blockID;
 		Block.blocksList[i] = null;
-		Block ImpactBlockFurnace = (new ImpactBlockFurnace(61, false)).setHardness(3.5F).setStepSound(soundStoneFootstep).setUnlocalizedName("furnace").setCreativeTab(CreativeTabs.tabDecorations);
-		ReflectionHelper.setPrivateValue(Block.class, null, ImpactBlockFurnace, "furnace");
+		Block furnaceIdle = (new ImpactBlockFurnace(i, false)).setHardness(3.5F).setStepSound(soundStoneFootstep).setUnlocalizedName("furnace").setCreativeTab(CreativeTabs.tabDecorations);
+		//ReflectionHelper.setPrivateValue(Block.class, null, ImpactBlockFurnace, "furnace");
+		i = Block.furnaceBurning.blockID;
+		Block.blocksList[i] = null;
+		Block furnaceBurning = (new ImpactBlockFurnace(i, true)).setHardness(3.5F).setStepSound(soundStoneFootstep).setUnlocalizedName("furnace").setCreativeTab(CreativeTabs.tabDecorations);
+		
 		
 	}
 	@PostInit
